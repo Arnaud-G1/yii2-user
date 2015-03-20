@@ -47,7 +47,7 @@ class m140209_132017_init extends Migration
         $this->createIndex('user_recovery', '{{%user}}', 'id, recovery_token', true);
 
         
-        $this->createTable('{{%profile}}', [
+        $profileTableDef = [
             'user_id'        => Schema::TYPE_INTEGER . ' PRIMARY KEY',
             'name'           => Schema::TYPE_STRING . '(255)',
             'public_email'   => Schema::TYPE_STRING . '(255)',
@@ -56,7 +56,7 @@ class m140209_132017_init extends Migration
             'location'       => Schema::TYPE_STRING . '(255)',
             'website'        => Schema::TYPE_STRING . '(255)',
             'bio'            => Schema::TYPE_TEXT
-        ], $this->tableOptions);
+        ];
         
         $this->makeTable('{{%profile}}',$profileTableDef);
 
