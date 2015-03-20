@@ -19,7 +19,7 @@ class m140209_132017_init extends Migration
 {
     public function up()
     {
-        $tableDef = [
+        $userTableDef = [
             'id'                   => Schema::TYPE_PK,
             'username'             => Schema::TYPE_STRING . '(25) NOT NULL',
             'email'                => Schema::TYPE_STRING . '(255) NOT NULL',
