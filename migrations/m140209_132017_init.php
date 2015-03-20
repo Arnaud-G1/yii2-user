@@ -64,21 +64,22 @@ class m140209_132017_init extends Migration
     }
     
     private function makeTable($tablename,$tableDef) {
-        $table = Yii::app()->db->schema->getTable($tablename,true);
+        $table = \Yii::$app->db->schema->getTableSchema($tablename,true);
         if ($table === null) {
             // table does not exist
             $this->createTable($tablename, $tableDef , $this->tableOptions);
         } else {
             // table exists           
-            foreach($table->columns[$column] as $column) {
+            foreach($table->columnNames as $column) {
                 // remove useless columns
                 if(!isset($tableDef[$column])) {
                     $this->dropColumn($tablename,$column);
                 }            
             }
+
             foreach($tableDef as $column => $type) {
                 // add missing columns
-                if(!isset($table->columns[$column])) {
+                if(!in_array($column,$table->columnNames)) {
                     $this->addColumn($tablename,$column, $type);
                 }            
             }
