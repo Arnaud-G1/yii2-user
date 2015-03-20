@@ -109,7 +109,7 @@ return [
     'Are you sure you want to unblock this user?' => 'Êtes-vous sûr(e) de vouloir débloquer cet utilisateur ?',
     'Are you sure? Deleted user can not be restored' => 'Êtes-vous sûr(e) ? L\'utilisateur supprimé ne peut être restauré',
     'Bio' => 'Bio',
-    'Block' => 'Bloqué',
+    'Block' => 'Bloquer',
     'Block status' => 'Statut bloqué',
     'Blocked at {0, date, MMMM dd, YYYY HH:mm}' => 'Bloqué à {0, date, MMMM dd, YYYY HH:mm}',
     'Change your avatar at Gravatar.com' => 'Changez votre avatar à Gravatar.com',
