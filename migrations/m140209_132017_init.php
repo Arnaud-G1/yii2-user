@@ -19,7 +19,7 @@ class m140209_132017_init extends Migration
 {
     public function up()
     {
-        $this->createTable('{{%user}}', [
+        $tableDef = [
             'id'                   => Schema::TYPE_PK,
             'username'             => Schema::TYPE_STRING . '(25) NOT NULL',
             'email'                => Schema::TYPE_STRING . '(255) NOT NULL',
@@ -37,13 +37,16 @@ class m140209_132017_init extends Migration
             'logged_in_at'         => Schema::TYPE_INTEGER,
             'created_at'           => Schema::TYPE_INTEGER . ' NOT NULL',
             'updated_at'           => Schema::TYPE_INTEGER . ' NOT NULL',
-        ], $this->tableOptions);
-
+        ];
+                       
+        $this->makeTable('{{%user}}',$userTableDef);
+         
         $this->createIndex('user_unique_username', '{{%user}}', 'username', true);
         $this->createIndex('user_unique_email', '{{%user}}', 'email', true);
         $this->createIndex('user_confirmation', '{{%user}}', 'id, confirmation_token', true);
         $this->createIndex('user_recovery', '{{%user}}', 'id, recovery_token', true);
 
+        
         $this->createTable('{{%profile}}', [
             'user_id'        => Schema::TYPE_INTEGER . ' PRIMARY KEY',
             'name'           => Schema::TYPE_STRING . '(255)',
@@ -54,8 +57,32 @@ class m140209_132017_init extends Migration
             'website'        => Schema::TYPE_STRING . '(255)',
             'bio'            => Schema::TYPE_TEXT
         ], $this->tableOptions);
+        
+        $this->makeTable('{{%profile}}',$profileTableDef);
 
         $this->addForeignKey('fk_user_profile', '{{%profile}}', 'user_id', '{{%user}}', 'id', 'CASCADE', 'RESTRICT');
+    }
+    
+    private function makeTable($tablename,$tableDef) {
+        $table = Yii::app()->db->schema->getTable($tablename,true);
+        if ($table === null) {
+            // table does not exist
+            $this->createTable($tablename, $tableDef , $this->tableOptions);
+        } else {
+            // table exists           
+            foreach($table->columns[$column] as $column) {
+                // remove useless columns
+                if(!isset($tableDef[$column])) {
+                    $this->dropColumn($tablename,$column);
+                }            
+            }
+            foreach($tableDef as $column => $type) {
+                // add missing columns
+                if(!isset($table->columns[$column])) {
+                    $this->addColumn($tablename,$column, $type);
+                }            
+            }
+        }
     }
 
     public function down()
