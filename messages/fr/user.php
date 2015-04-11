@@ -17,9 +17,9 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'A message has been sent to your email address. It contains a confirmation link that you must click to complete registration.' => 'Un message a été envoyé à votre adresse e-mail. Il contient un lien de confirmation que vous devez cliquer pour terminer l\'enregistrement.',
+    'A message has been sent to your email address. It contains a confirmation link that you must click to complete registration.' => 'Un message a été envoyé à votre adresse e-mail. Il contient un lien de confirmation sur lequel vous devez cliquer pour terminer l\'enregistrement.',
     'A message has been sent to your email address. It contains a password that we generated for you.' => 'Un message a été envoyé à votre adresse e-mail. Il contient un mot de passe que nous avons généré pour vous.',
-    'A message has been sent to your email address. It contains your password and a confirmation link that you must click to complete registration.' => 'Un message a été envoyé à votre adresse e-mail. Il contient votre mot de passe et un lien de confirmation que vous devez cliquer pour terminer l\'enregistrement.',
+    'A message has been sent to your email address. It contains your password and a confirmation link that you must click to complete registration.' => 'Un message a été envoyé à votre adresse e-mail. Il contient votre mot de passe et un lien de confirmation sur lequel vous devez cliquer pour terminer l\'enregistrement.',
     'Account' => 'Compte',
     'Account confirmation' => 'Confirmation de compte',
     'Your account has been created' => 'Votre compte a été créé',
@@ -96,7 +96,7 @@ return [
     'We are sorry but your confirmation token is invalid. Maybe it is expired or does not exist. You can try requesting a new one by clicking the link below:' => 'Nous sommes désolés mais votre jeton de confirmation n\'est pas valide. Peut-être que la date est expirée ou n\'existe pas. Vous pouvez essayer d\'en demander un nouveau en cliquant sur le lien ci-dessous :',
     'We are sorry but your confirmation token is invalid. Maybe it is expired or does not exist. You can try requesting new recovery token.' => 'Nous sommes désolés mais votre jeton de confirmation n\'est pas valide. Peut-être que la date est expirée ou n\'existe pas. Vous pouvez essayer de demander un nouveau jeton de récupération.',
     'We need to confirm your email address' => 'Félicitations, mais presque ! Nous avons besoin de la confirmation de votre e-mail.',
-    'You have been sent an email with instructions on how to reset your password.' => 'Il vous avez été envoyé un e-mail avec des instructions sur la réinitialisation de votre mot de passe.',
+    'You have been sent an email with instructions on how to reset your password.' => 'Un e-mail vous a été envoyé avec des instructions sur la réinitialisation de votre mot de passe.',
     'Your account has been confirmed' => 'Votre compte a été confirmé',
     'Your account has been created' => 'Votre compte a été crée',
     'Your account on {0} has been successfully created' => 'Votre compte sur {0} a été créé avec succès',
@@ -123,7 +123,7 @@ return [
     'Continue' => 'Continuer',
     'Create a user account' => 'Créer un compte utilisateur',
     'Current password' => 'Mot de passe actuel',
-    'Current password is not valid' => 'Mot de passe actuel n\'est pas valide',
+    'Current password is not valid' => 'Le mot de passe actuel n\'est pas valide',
     'Didn\'t receive confirmation message?' => 'Vous n\'avez pas reçu le message de confirmation ?',
     'Disconnect' => 'Déconnecter',
     'Email' => 'Email',
@@ -168,7 +168,7 @@ return [
     'Save' => 'Sauvegarder',
     'Sign in' => 'Se connecter',
     'Sign up' => 'S\'inscrire',
-    'Thank you for signing up on {0}' => 'Nous vous remercions de votre inscription sur {0}',
+    'Thank you for signing up on {0}' => 'Nous vous remercions pour votre inscription sur {0}',
     'There is no user with this email address' => 'Il n\'y a pas d\'utilisateur possédant cet e-mail.',
     'This URL will only be valid for a limited time and will expire' => 'Ce lien ne sera valable que pour une durée limitée et prendra fin',
     'This account has already been confirmed' => 'Ce compte a déjà été confirmé',
