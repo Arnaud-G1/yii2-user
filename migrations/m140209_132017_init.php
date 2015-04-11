@@ -56,7 +56,7 @@ class m140209_132017_init extends Migration
             'location'       => Schema::TYPE_STRING . '(255)',
             'website'        => Schema::TYPE_STRING . '(255)',
             'bio'            => Schema::TYPE_TEXT
-        ],$profileTableDef);
+        ],$this->tableOptions);
 
         $this->addForeignKey('fk_user_profile', '{{%profile}}', 'user_id', '{{%user}}', 'id', 'CASCADE', 'RESTRICT');
     }
